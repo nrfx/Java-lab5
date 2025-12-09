@@ -1,0 +1,2 @@
+STORE:File Store
+DAIRY|Milk|90.0|3.2
