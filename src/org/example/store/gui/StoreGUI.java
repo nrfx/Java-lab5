@@ -9,6 +9,8 @@ import org.example.store.Store;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class StoreGUI extends JFrame {
     private Store store;
@@ -93,7 +95,7 @@ public class StoreGUI extends JFrame {
         btnRemove.addActionListener(e -> {
             int selectedRow = table.getSelectedRow();
             if (selectedRow >= 0) {
-                store.removeProduct(selectedRow);
+                    store.removeProduct(selectedRow);
                 updateView();
             } else {
                 JOptionPane.showMessageDialog(this, "Сначала выберите товар в таблице!");
@@ -112,9 +114,17 @@ public class StoreGUI extends JFrame {
             }
         });
 
-        btnCheck.addActionListener(e -> {
-            store.checkAllProducts();
-            JOptionPane.showMessageDialog(this, "Ревизия проведена успешно!\n(Подробности выведены в консоль IDE)");
+//        btnCheck.addActionListener(e -> {
+//            store.checkAllProducts();
+//            JOptionPane.showMessageDialog(this, "Ревизия проведена успешно!\n(Подробности выведены в консоль IDE)");
+//        });
+
+        btnCheck.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                store.checkAllProducts();
+                JOptionPane.showMessageDialog(StoreGUI.this, "Ревизия проведена успешно!\n(Подробности выведены в консоль IDE)");
+            }
         });
 
         btnSellAll.addActionListener(e -> {
