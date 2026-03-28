@@ -18,7 +18,7 @@ public class ProductDialog extends JDialog {
         setSize(300, 200);
         setLocationRelativeTo(parent);
 
-        // Панель ввода данных (GridLayout - делает окно резиновым)
+        // панель ввода данных (GridLayout делает окно резиновым)
         JPanel inputPanel = new JPanel(new GridLayout(4, 2, 5, 5));
 
         inputPanel.add(new JLabel("Тип товара:"));
@@ -38,7 +38,7 @@ public class ProductDialog extends JDialog {
         specField = new JTextField();
         inputPanel.add(specField);
 
-        // Динамическая смена текста (Событие)
+        // динамическая смена текста (событие)
         typeBox.addActionListener(e -> {
             if (typeBox.getSelectedIndex() == 0) specLabel.setText("Тип муки:");
             else specLabel.setText("Жирность (%):");
@@ -46,7 +46,7 @@ public class ProductDialog extends JDialog {
 
         add(inputPanel, BorderLayout.CENTER);
 
-        // Панель кнопок (FlowLayout)
+        // панель кнопок (FlowLayout)
         JPanel buttonPanel = new JPanel(new FlowLayout());
         JButton okButton = new JButton("Сохранить");
         JButton cancelButton = new JButton("Отмена");

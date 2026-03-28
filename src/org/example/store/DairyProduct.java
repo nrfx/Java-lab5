@@ -1,7 +1,7 @@
 package org.example.store;
 
 public class DairyProduct extends Product {
-    private double fatContent; // Жирность (аналог pieces)
+    private double fatContent;
 
     public DairyProduct(String name, double price, double fatContent) {
         super(name, price);

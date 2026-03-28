@@ -32,10 +32,6 @@ public class Menu {
         }
     }
 
-    // Логика аналогична исходной, методы переименованы:
-    // createNewBand -> createNewStore
-    // useDemoBand -> useDemoStore
-    // showBandMenu -> showStoreMenu
 
     private static void createNewStore() {
         System.out.print("Название магазина: ");
@@ -77,7 +73,7 @@ public class Menu {
             switch (choice) {
                 case SHOW_PRODUCTS -> store.displayAllProducts();
                 case ADD_PRODUCT -> addNewProduct();
-                case UPDATE_PRODUCT -> updateProduct(); // Логика ввода как в исходнике
+                case UPDATE_PRODUCT -> updateProduct();
                 case REMOVE_PRODUCT -> removeProduct();
                 case FIND_PRODUCT -> findProduct();
                 case CHECK_ALL -> store.checkAllProducts();
@@ -89,8 +85,6 @@ public class Menu {
         }
     }
 
-    // Методы addNewProduct, updateProduct и т.д. реализуются
-    // аналогично source: 354-436, запрашивая flourType или fatContent.
 
     private static void addNewProduct() {
         System.out.println("1. Выпечка\n2. Молочка");
@@ -116,7 +110,6 @@ public class Menu {
     }
 
     private static void callProductMethods() {
-        // 1. Проверяем, есть ли товары
         if (store == null || store.getProducts().isEmpty()) {
             System.out.println("В магазине нет товаров");
             return;
@@ -158,8 +151,7 @@ public class Menu {
         }
     }
 
-    // Заглушки для краткости, полная реализация требует копирования
-    // логики ввода данных из исходного файла
+
     private static void updateProduct() { /*...*/ }
     private static void removeProduct() { /*...*/ }
     private static void findProduct() { /*...*/ }

@@ -57,7 +57,7 @@ public class Store {
         }
     }
 
-    public void sellAllProducts() { // Аналог playAllInstruments
+    public void sellAllProducts() {
         System.out.println("\nМагазин '" + name + "' открывает продажи!");
         if (products.isEmpty()) {
             System.out.println("Нет товаров для продажи!");
@@ -69,7 +69,7 @@ public class Store {
         System.out.println("ВСЕ ПРОДАНО! КАССА ПОЛНА!\n");
     }
 
-    public void checkAllProducts() { // Аналог tuneAllInstruments
+    public void checkAllProducts() {
         System.out.println("\nРевизия товаров");
         for (Product product : products) {
             product.checkQuality();

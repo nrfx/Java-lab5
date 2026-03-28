@@ -11,7 +11,7 @@ public abstract class Product implements Storable {
         productCount++;
     }
 
-    public abstract void consume(); // Аналог play()
+    public abstract void consume();
     public abstract String getType();
 
     @Override

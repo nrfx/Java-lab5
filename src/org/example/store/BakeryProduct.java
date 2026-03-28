@@ -1,7 +1,7 @@
 package org.example.store;
 
 public class BakeryProduct extends Product {
-    private String flourType; // Тип муки (аналог струн)
+    private String flourType;
 
     public BakeryProduct(String name, double price, String flourType) {
         super(name, price);
