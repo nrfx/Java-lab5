@@ -10,11 +10,11 @@ public class StoreGUI extends JFrame {
     private Store store;
     private JTable table;
     private StoreTableModel tableModel;
-    private StoreController controller; // Добавляем ссылку на контроллер
+    private StoreController controller; // ссылка на контроллер
 
     public StoreGUI() {
         this.store = new Store("Новый Магазин");
-        this.controller = new StoreController(); // Инициализируем контроллер
+        this.controller = new StoreController();
 
         setTitle("Управление магазином: " + store.getName());
         setSize(850, 500);
@@ -42,7 +42,7 @@ public class StoreGUI extends JFrame {
         JButton btnSave = new JButton("9. Сохранить в файл");
         JButton btnLoad = new JButton("10. Открыть из файла");
 
-        // Привязываем кнопки к методам контроллера, передавая 'this' (текущее окно)
+        // привязываем кнопки к методам контроллера, передавая текущее окно
         btnDemo.addActionListener(e -> controller.loadDemoStore(this));
         btnAdd.addActionListener(e -> controller.addProduct(this));
         btnUpdate.addActionListener(e -> controller.updateProduct(this));
@@ -79,7 +79,7 @@ public class StoreGUI extends JFrame {
         JMenuItem openItem = new JMenuItem("Открыть...");
         JMenuItem saveItem = new JMenuItem("Сохранить...");
 
-        // Меню тоже использует методы контроллера
+        // меню тоже использует методы контроллера
         openItem.addActionListener(e -> controller.loadFromFile(this));
         saveItem.addActionListener(e -> controller.saveToFile(this));
 
@@ -89,7 +89,7 @@ public class StoreGUI extends JFrame {
         setJMenuBar(menuBar);
     }
 
-    // Методы для связи контроллера с View
+    // методы для связи контроллера с view
     public void updateView() {
         tableModel.setStore(store);
         setTitle("Управление магазином: " + store.getName());

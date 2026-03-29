@@ -18,7 +18,7 @@ public class ProductDialog extends JDialog {
         setSize(300, 200);
         setLocationRelativeTo(parent);
 
-        // панель ввода данных (GridLayout делает окно резиновым)
+        // панель ввода данных - GridLayout делает окно резиновым
         JPanel inputPanel = new JPanel(new GridLayout(4, 2, 5, 5));
 
         inputPanel.add(new JLabel("Тип товара:"));
